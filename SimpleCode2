@@ -1,0 +1,53 @@
+package virujavaapplication;
+
+public class largestinarrar {
+	public static int largestinarray(int[] input) {
+		int max=Integer.MIN_VALUE;
+		for(int i=0; i<input.length; i++) {
+			if (input[i]>max) {
+				max=input[i];
+			}
+		}
+		return max;
+		
+	}
+	
+	public static int Secondlargest(int[] input) {
+		int largest=largestinarray(input);
+		int max2=Integer.MIN_VALUE;
+		
+		for(int i=0; i<input.length; i++) {
+			if(input[i]>max2 && input[i]!=largest) {
+				max2=input[i];
+			}
+		}
+		
+	return max2;
+	}
+	public static int thirdlargest(int[] input) {
+		int largest=largestinarray(input);
+		int largest1=Secondlargest(input);
+		int max3=Integer.MIN_VALUE;
+		
+		for(int i=0; i<input.length; i++) {
+			if(input[i]>max3 && input[i]!=largest1 &&input[i]!=largest) {
+				max3=input[i];
+			}
+		}
+		
+	return max3;
+	}
+
+	public static void main(String[] args) {
+		int input[]= {2,4,3,5,6,7,8};
+		 int secondLargest = Secondlargest(input);
+		 System.out.println(largestinarray(input));
+		 
+	    System.out.println( secondLargest);
+		 
+	    System.out.print(thirdlargest(input));
+		// TODO Auto-generated method stub
+
+	}
+
+}
